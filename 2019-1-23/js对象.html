@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+		// var obj = new Object();
+		// obj.name = "孙悟空";
+		// obj.genter = "男";
+		// obj.age = 18;
+		// console.log(obj.name);
+		
+
+
+		// var a = 123;
+		// function fun(){
+		// 	alert(a);
+		// 	a = 456;
+		// }
+		// fun();
+		// alert(a);
+
+
+
+		// alert(d);
+		// var a = 10;
+		// var b = "hello";
+		// c = true;
+		// function fun(){
+		// 	alert("hello");
+		// }
+		// var d = 35;
+
+
+
+		// 解析器在调用函数每次都会想函数内部传递进一个隐含的参数,
+		// 这个隐含的参数就是this,this指向的是一个对象.
+		// 这个对象我们称为函数执行的上下文对象,
+		// 根据函数的调用方式的不同,this会指向不同的对象.
+		// function fun(){
+		// 	console.log(this);
+		// }
+		
+		// var obj = {
+		// 	name : "孙悟空",
+		// 	sayName : fun
+		// };
+		// console.log(obj.sayName == fun);//输出true
+		//以函数形式调用,this就是window
+		//所有浏览器都支持 window 对象。它表示浏览器窗口。
+		//所有 JavaScript 全局对象、函数以及变量均自动成为 window 对象的成员。
+		// fun();
+		//以方法的形式调用,this就是调用方法的对象,在这里就是obj
+		// obj.sayName();
+
+
+
+
+
+		// var name = "全局";
+		// function fun1(){
+		// 	console.log(name);
+		// }
+		// function fun2(){
+		// 	console.log(obj.name);
+		// }
+		// function fun3(){
+		// 	console.log(obj2.name);
+		// }
+		// function fun4(){
+		// 	console.log(this.name);
+		// }
+		// var obj = {
+		// 	name : "孙悟空",
+		// 	sayName:fun4,
+		// };
+		// var obj2 = {
+		// 	name : "沙和尚",
+		// 	sayName:fun4,
+		// };
+		// obj.sayName();
+		// obj2.sayName();
+
+
+		
+		//普通创建对象
+		// var obj = {
+		// 	name : "孙悟空",
+		// 	age : 18,
+		// 	gender : "男",
+		// 	sayName : function(){
+		// 		alert(this.name);
+		// 	}
+		// };
+		//使用工厂方法创建对象,使用的构造函数都是Object
+		//所以创建的对象都是Object这个对象
+		//就导致我们无法区分出多种不同类型的对象
+		// function createPerson(name , age , gender){
+		// 	//创建一个新的对象
+		// 	var obj = new Object();
+			
+		// 	//向对象中添加
+		// 	obj.name = name;
+		// 	obj.age = age;
+		// 	obj.gender = gender;
+		// 	obj.sayName = function(){
+		// 		alert(this.name);
+		// 	};
+
+		// 	//将新的对象返回
+		// 	return obj;
+		// }
+		// var obj2 = createPerson("猪八戒",28,"男");
+		// console.log(obj2);
+		// obj2.sayName();
+
+
+
+
+		//构造一个构造函数,专门用来创建Person对象的
+		//构造函数和普通函数的区别就是调用方式的不同
+		//普通函数是直接调用,而构造函数需要使用new关键字来调用
+
+		// 构造函数的执行流程
+		// 1.立即创建一个新的对象
+		// 2.将新建的对象设置为函数中的this
+		// 3.执行函数
+		// 4.将新建的对象作为返回值返回
+
+
+		// this情况
+		// 1.当以函数的形式调用时,this就是window
+		// 2.当以方法(在函数中new一个对象)的形式调用时,哪个对象调用方法this就是谁
+		// 3.当以构造函数的形式调用时,this就是new的函数名
+		// function Person(name,age,gender){
+		// 	this.name = name;
+		// 	this.age = age;
+		// 	this.genter = gender;
+		// 	this.sayName = function(){
+		// 		alert(this.name);
+		// 	};
+		// }
+		// var per1 = new Person("孙悟空",18,"男");
+		// var per2 = new Person("猪八戒",18,"男");
+		// var per3 = new Person("沙和尚",18,"男");
+		// console.log(per1);
+		// console.log(per2);
+		// console.log(per3);
+
+
+		//工厂方法创建对象是在函数里面新建一个Object对象
+		//构造函数是定义了一个对象名,然后创建对象
+		//所有的对象都是Object后代
+
+
+
+		// 创建一个Person构造函数
+		// 在Person构造函数中,为每一个对象都添加了一个sayName方法,
+		// 目前我们的方法是在构造函数内部创建的,
+		// 也就是构造函数没执行一次就会创建一个新的sayName方法
+		// 也就是所有实例的sayName都是唯一的
+		// 这样就导致构造函数执行一次就创建一个新的方法,
+		// 执行一万次就会创建一万个新的方法,而一万个方法都是一模一样的
+		// 这是完全没有必要的,完全可以使所有的对象共享一个方法
+		// function Person(name,age,gender){
+		// 	this.name = name;
+		// 	this.age = age;
+		// 	this.genter = gender;
+		// 	this.sayName = function(){
+		// 		alert(this.name);
+		// };
+
+
+		// 原型prototype
+		// 我们所创建的每一个函数,解析器都会向函数添加一个属性prototype
+		// 这个属性对应着一个对象,这个对象就是我们所谓的原型对象
+		// 如果函数作为普通函数调用prototype没有任何作用
+		// 当函数以构造函数的形式调用时,它所创建的对象中都会有一个隐含的属性
+		// 指向该构造函数的原型对象,我们可以通过__proto__来访问该属性
+		// 原型对象就相当于一个公共的区域,所有同一个类的实例都可以访问到这个原型对象
+		// 我们可以将对象中的共有的内容,统一设置到原型对象中.
+		// 当我们访问兑现过得一个属性或方法时,它会先在对象自身中寻找,如果有则直接使用,
+		// 如果没有就会去原型对象中找,有则返回
+		// 以后我们创建构造函数时,可以将这些对象共有的属性和方法,统一添加到构造函数的原型中,
+		// 这样不用分别为每一个对象添加,也不会影响到全局作用于,就可以使每个对象都具有这些属性和方法
+		function Person(name,age,gender){
+			this.name = name;
+			this.age = age;
+			this.genter = gender;
+		};
+		Person.prototype.sayName = function (){
+			alert(this.name);
+		};
+
+		var per1 = new Person("孙悟空",18,"男");
+		per1.sayName();
+
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

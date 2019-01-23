@@ -1,0 +1,6 @@
+{
+    "C_Cpp.autocomplete": "true",
+    "editor.tabCompletion": "true",
+    "html.suggest.ionic": true,
+    "typescript.implementationsCodeLens.enabled": true,
+}
