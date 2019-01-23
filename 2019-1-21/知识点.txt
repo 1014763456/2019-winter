@@ -1,0 +1,11 @@
+sort()将一个普通的数组有小到大排序
+asort()将一个索引数组按照值由小到大排序
+ksort()将一个索引数组按照字符由小到大排序
+
+rsort(),asort(),ksort()则是由大到小排序
+
+shuffle()将数组乱序,可以用来随机输出三张图片
+array_reverse()数组逆序
+
+array_push()入栈
+array_pop()出栈
