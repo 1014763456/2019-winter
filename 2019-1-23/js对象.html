@@ -33,14 +33,13 @@
 
 
 
-		// 解析器在调用函数每次都会想函数内部传递进一个隐含的参数,
+		// 解析器在调用函数每次都会向函数内部传递进一个隐含的参数,
 		// 这个隐含的参数就是this,this指向的是一个对象.
 		// 这个对象我们称为函数执行的上下文对象,
 		// 根据函数的调用方式的不同,this会指向不同的对象.
 		// function fun(){
 		// 	console.log(this);
 		// }
-		
 		// var obj = {
 		// 	name : "孙悟空",
 		// 	sayName : fun
@@ -49,9 +48,8 @@
 		//以函数形式调用,this就是window
 		//所有浏览器都支持 window 对象。它表示浏览器窗口。
 		//所有 JavaScript 全局对象、函数以及变量均自动成为 window 对象的成员。
-		// fun();
 		//以方法的形式调用,this就是调用方法的对象,在这里就是obj
-		// obj.sayName();
+		//obj.sayName();
 
 
 
@@ -96,7 +94,7 @@
 		//所以创建的对象都是Object这个对象
 		//就导致我们无法区分出多种不同类型的对象
 		// function createPerson(name , age , gender){
-		// 	//创建一个新的对象
+		//	// 创建一个新的对象
 		// 	var obj = new Object();
 			
 		// 	//向对象中添加
@@ -183,18 +181,43 @@
 		// 如果没有就会去原型对象中找,有则返回
 		// 以后我们创建构造函数时,可以将这些对象共有的属性和方法,统一添加到构造函数的原型中,
 		// 这样不用分别为每一个对象添加,也不会影响到全局作用于,就可以使每个对象都具有这些属性和方法
-		function Person(name,age,gender){
-			this.name = name;
-			this.age = age;
-			this.genter = gender;
-		};
-		Person.prototype.sayName = function (){
-			alert(this.name);
-		};
+		// function Person(name,age,gender){
+		// 	this.name = name;
+		// 	this.age = age;
+		// 	this.genter = gender;
+		// };
+		// Person.prototype.sayName = function (){
+		// 	alert(this.name);
+		// };
 
-		var per1 = new Person("孙悟空",18,"男");
-		per1.sayName();
+		// var per1 = new Person("孙悟空",18,"男");
+		// per1.sayName();
 
+
+
+
+
+		//创建一个构造函数
+		// function MyClass(){
+
+		// }
+		// //向MyClass的原型中添加一个name属性
+		// MyClass.prototype.name = "我是原型中的名字";
+
+		// var mc = new MyClass();
+
+		// console.log(mc.name);
+
+		// //使用in检查对象中是否含有某个属性,如果对象中没有,原型中有也会返回true
+		// console.log("name" in mc);
+		// //可以使用对象的hasOwnProperty()来检查对象自身是否含有某属性
+		// console.log(mc.hasOwnProperty("name"));
+
+		// //原型对象也是对象,所以它也有原型
+		// //hasOwnProperty是原型的原型里面的函数
+		// console.log(mc.__proto__.__proto__.hasOwnProperty("hasOwnProperty"));//输出true
+		// //Object对象的原型没有原型,如果在Object中依然没有找到,则返回null.
+		// console.log(mc.__proto__.__proto__.__proto__);//输出null
 
 	</script>
 </head>
