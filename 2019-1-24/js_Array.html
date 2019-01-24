@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+		// var arr = new Array();
+		// arr[0] = 1;
+		// arr[1] = 1;
+		// console.log(arr);
+		// console.log(arr.length);
+
+		// //修改length
+		// arr.length = 10;
+		// console.log(arr);
+
+		var arr = ["孙悟空","猪八戒","沙和尚","白骨精"];
+		//slice()函数 : arrayObject.slice(start,end);
+		//该方法不会改变元素数组,而是把截取到的元素封装到一个新数组中返回
+		console.log(arr.slice(0,2));//["孙悟空", "猪八戒"]
+		console.log(arr.slice(0));//["孙悟空", "猪八戒", "沙和尚", "白骨精"]
+		console.log(arr.slice(0,-3));//["孙悟空"]
+
+		//splice()函数 : arrayObject.splice(start,number,addDate);
+		//使用solice()会影响到原数组,会将指定元素从原数组中删除,并且可以添加第三个中的参数替换删除的元素
+		console.log(arr.splice(0,2,"牛魔王","红孩儿"));//["孙悟空", "猪八戒"]
+		console.log(arr);//["牛魔王", "红孩儿", "沙和尚", "白骨精"]
+
+
+
+		var arr1 = ["孙悟空","猪八戒","沙和尚"];
+		var arr2 = ["白骨精","玉兔精","蜘蛛精"];
+		var arr3 = ["二郎神","太上老君","玉皇大帝"];
+		//concat()函数可以连接两个或多个数组,并将新的数组返回
+		//该方法不会对原数组产生影响
+		var result = arr1.concat(arr2,arr3,"牛魔王","铁扇公主");
+		console.log(result);//["孙悟空", "猪八戒", "沙和尚", "白骨精", "玉兔精", "蜘蛛精", "二郎神", "太上老君", "玉皇大帝", "牛魔王", "铁扇公主"]
+		console.log(arr1);//["孙悟空", "猪八戒", "沙和尚"]
+		console.log(arr2);//["白骨精","玉兔精","蜘蛛精"]
+
+
+		// join()函数可以把数组转换成一个字符串
+		// 该方法不会对原数组产生影响,而是将转换后的字符串作为结果返回
+		// 在join()中可以指定一个字符串作为参数,成为数组中元素的连接符
+		// 不传参默认用","连接
+		result = arr.join("-");
+		console.log(result);//牛魔王-红孩儿-沙和尚-白骨精
+
+
+		// reverse()用来反转,会影响到原数组
+		arr1.reverse();
+		console.log(arr1);//["沙和尚", "猪八戒", "孙悟空"]
+
+
+		// sort()可以对数组中的元素进行排序
+		// sort()默认按照Unicode编码来排序,对于数字排序可能会得到错误的结果
+		// 我们可以在sort()添加一个回调函数,来指定排序规则,回调函数需要定义两个形参,
+		// 浏览器会分别使用数组中的元素作为实参去调用回调函数
+		// 使用哪个元素调用不切丁,但肯定的是在数组中a一定在b前面
+		// 浏览器会根据回调函数的返回值来决定元素的顺序
+		// 如果返回一个大于0的值,则元素会交换位置
+		// 如果返回一个小于0的值,则元素位置不变
+		// 如果返回一个0,则认为两个元素相等,不交换位置
+		arr = [3,4,11,2,5];
+		console.log(arr.sort());//[11, 2, 3, 4, 5]
+
+		arr.sort(function (a,b) {
+			//升序排列
+			return a - b;
+			//降序排列
+			// return b - a;
+		});
+		console.log(arr);//[2, 3, 4, 5, 11]
+	</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+		// function fun(a,b){
+		// 	console.log("a = "+a);
+		// 	console.log("b = "+b);
+		// 	alert(this.name);
+		// }
+
+		// //call()和apply()都会调用函数
+		// //call()和apply()可以将一个对象指定为第一个参数,从而改变函数中this的指向
+		// //call()方法可以将实参在对象之后依次传递
+		// //apply()方法需要将实参封装到一个数组中统一传递
+
+		// var obj = {
+		// 	name : "obj"
+		// };
+		// fun.call(obj,2,3);//调用fun函数
+		// fun.apply(obj,[2,3]);//调用fun函数
+
+
+
+
+		// 在调用函数时,浏览器每次都会传递进两个隐含的参数
+		// 1.函数的上下文对象this
+		// 2.封装实参的对象arguments
+		// arguments是一个类数组对象,它可以通过索引来操作数据,也可以获取长度
+		// 在调用函数时,传递的实参都会在arguments中保存
+		// arguments.callee就是当前执行的函数的对象
+		// function fun(){
+		// 	console.log(arguments.length);//2
+		// 	console.log(arguments[0]);//hello
+		// 	console.log(arguments.callee);  //ƒ fun(){
+		// 									// console.log(arguments.length);
+		// 									// console.log(arguments[0]);
+		// 									// console.log(arguments.callee);
+		// 									//}
+		
+		// }
+		// fun("hello",true,);
+
+
+
+
+
+		// Date对象
+		// 在JS中使用Date对象来表示一个时间
+
+		var d = new Date();
+		console.log(d);
+		var d2 = new Date("1/24/2019 19:41:30")//月日年 时分秒
+		console.log(d2);
+	</script>
+</head>
+<body>
+
+</body>
+</html>
