@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		#box1{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			padding: 10px;
+		}
+	</style>
+
+	<script type="text/javascript">
+		window.onload = function(){
+			var box1 = document.getElementById("box1");
+			var btn01 = document.getElementById("btn01");
+			btn01.onclick = function(){
+				//修改元素的样式:元素.style.样式名 = 样式值;(改的是内敛样式)
+				//修改box1的宽度
+				box1.style.width = "300px";
+				box1.style.height = "300px";
+				box1.style.backgroundColor = "blue";//background-color有-需要用驼峰命名法
+
+				console.log(box1.clientWidth);//实际宽度加上内边距,只读
+				console.log(box1.clientHeight);//实际高度加上内边距,只读
+
+				console.log(box1.offsetWidth);//实际宽度加内边距和外边距,只读
+				console.log(box1.offsetHeight);//实际高度加内边距和外边距,只读
+
+				var op = box1.offsetParent;//获取离当前元素最近的定位父元素,
+				//如果所有的祖先元素都没有定位,返回body
+				console.log(op);
+
+				//offsetLeft:获取相对于其定位父元素的水平偏移量
+				//offsetTop:获取相对于其定位父元素的垂直偏移量
+			};
+
+			var btn02 = document.getElementById("btn02");
+			btn02.onclick = function(){
+				//alert(box1.style.width);//通过style读取的也是内敛样式
+
+				//获取元素当前显示的样式
+				console.log(getComputedStyle(box1,null).width);
+			};
+		};
+	</script>
+</head>
+<body>
+	<button id="btn01">点我一下1</button>
+	<button id="btn02">点我一下2</button>
+	<div id="box1"></div>
+</body>
+</html>

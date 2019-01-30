@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		#areaDiv{
+			border: 1px solid black;
+			height: 100px;
+			width: 200px;
+			margin: 30px 0px;
+		}
+		#showMsg{
+			border: 1px solid black;
+			height: 50px;
+			width: 200px;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function(){
+			//当鼠标在areaDiv中移动是,在showMsg中来显示鼠标的坐标
+			var areaDiv = document.getElementById("areaDiv");
+			var showMsg = document.getElementById("showMsg");
+
+			areaDiv.onmousemove = function(event){
+				// console.log(event);
+				//在showMsg中显示鼠标的坐标
+				event = event || window.event;//兼容用
+				var x = event.clientX;
+				var y = event.clientY;
+				showMsg.innerHTML = "x = "+x+" , y = " +y;
+			}
+		};
+	</script>
+</head>
+<body>
+	<div id="areaDiv"></div>
+	<div id="showMsg"></div>
+</body>
+</html>

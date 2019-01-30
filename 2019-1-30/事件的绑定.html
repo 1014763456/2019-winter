@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<style type="text/css">
+		
+	</style>
+	<title></title>
+	<script type="text/javascript">
+		//为一个元素的相同事件同时绑定多个响应的函数,按照绑定的顺序顺序执行
+		//还可以绑定一些特殊的事件
+		window.onload = function(){
+			//点击按钮以后弹出一个内容
+			var btn01 = document.getElementById("btn01");
+			//第一个参数:事件的字符串,第二个参数:回调函数,第三个参数:是否在捕获阶段触发事件,需要一个布尔值,一般传false
+			btn01.addEventListener("click",function(){
+
+			},false);
+		};
+	</script>
+</head>
+<body>
+	<button id="btn01">点我一下</button>
+</body>
+</html>
