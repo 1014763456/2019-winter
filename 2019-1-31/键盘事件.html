@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		
+	</style>
+	<script type="text/javascript">
+		window.onload = function(){
+			//键盘事件:
+			//onkeydown:按键按下,如果一直按着会一直触发
+			//onkeyup:按键松开
+			//一般绑定给一些可以获取到焦点的对象,或者document
+			// document.onkeydown = function(event){
+			// 	event = event || window.event;
+			// 	//可以通过keycode来获取按键的编码
+			// 	console.log(event.which);
+			// };
+
+			// document.onkeyup = function(){
+			// 	console.log("按键松开了");
+			// }
+		
+			var input = document.getElementsByTagName("input")[0];
+			input.onkeydown = function(event){
+				// console.log("按键被按下了");
+				// console.log(event.which);
+				if(event.which >=48 && event.which <=57){
+					//输入的内容不会出现在文本框中
+					return false;
+				}
+				
+			};
+		};
+	</script>
+</head>
+<body>
+	<input type="text" name="">
+</body>
+</html>

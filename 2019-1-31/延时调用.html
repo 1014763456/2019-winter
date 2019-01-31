@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+		var num = 1;
+		// setInterval(function(){
+		// 	console.log(num++);
+		// },500);
+
+		// 延时调用
+		var timer = setTimeout(function(){
+			console.log(num++)//三秒以后执行一次
+		},3000);
+
+		//关闭延时调用
+		clearTimeout(timer);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

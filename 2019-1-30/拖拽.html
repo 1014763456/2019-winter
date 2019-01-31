@@ -27,14 +27,20 @@
 			//当鼠标按下时开始拖拽,当鼠标移动时元素跟随移动,当鼠标送开时元素停止
 			var box1 = document.getElementById("box1");
 			box1.onmousedown = function(){
+
+				//鼠标在div的相对位置 鼠标.clientX - 元素.offsetLeft
+				//鼠标在div的相对位置 鼠标.clientY - 元素.offsetTop
+				var ol = event.clientX - box1.offsetLeft;
+				var ot = event.clientY - box1.offsetTop;
+
 				//为document绑定一个onmousemove事件
 				document.onmousemove = function(event){
 					event = event || window.event;
 					var left = event.clientX;
 					var top = event.clientY;
 
-					box1.style.left = left+"px";
-					box1.style.top = top+"px";
+					box1.style.left = (left-ol)+"px";
+					box1.style.top = (top-ot)+"px";
 				};
 
 				//不给box1绑定,因为如果有一个同级的div,就没有冒泡了,也就不会触发box1.onmouseup,所以应该给document绑定onmouseup事件
@@ -44,10 +50,15 @@
 					document.onmouseup = null;
 				};
 			};
+
+			//当我们拖拽页面中内容时,浏览器默认去搜索引擎中的搜索内容
+			//如果不需要这个效果,return false就可以了
+			return false;
 		};
 	</script>
 </head>
 <body>
+	我是一段文字
 	<div id="box1"></div>
 
 	<div id="box2"></div>

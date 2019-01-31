@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		
+	</style>
+	<script type="text/javascript">
+		window.onload = function(){
+			//BOM:浏览器对象模型
+			//BOM可以使我们通过JS来操作浏览器
+			//BOM对象(都是window对象的属性):
+			//	Window:代表整个浏览器窗口,同时window也是网页中的对象
+			//	Navigator:代表当前的浏览器的信息,通过该对象识别不同的浏览器
+			//	History:由于隐私的原因,该对象不能获取具体的历史记录,只能操作浏览器向前或向后翻页,并且只在当次访问有效
+			//	Location:代表当前浏览器的地址栏信息,可以跳转页面
+			//	Screen:可以获取到用户的显示器的相关信息(多移动端用)
+			
+
+			//navigator
+			// var ua = navigator.userAgent;
+			// // console.log(ua);
+			// if(/firefox/i.test(ua)){
+			// 	alert("你是火狐浏览器")
+			// }else if(/chrome/i.test(ua)){
+			// 	alert("你是谷歌浏览器");
+			// }else if("/msie/i".test(ua)){
+			// 	alert("你是IE浏览器")
+			// }
+
+
+			//history参数:
+			//length:获取当前访问的链接数量,back()回退到上一个页面
+			//forward()跳转到前一个页面
+			//go()可以跳转到指定的页面,需要一个整数作为参数
+
+
+			//location:获取地址栏信息
+			console.log(location);
+			var btn01 = document.getElementById("btn01");
+			btn01.onclick = function(){
+				location = "http://www.baidu.com"
+				//location.assign("http://www.baidu.com");相当于赋值会跳转页面,会生成历史记录
+				//location.reload();相当于刷新页面
+				//location.replace("http://www.baidu.com");也会跳转页面,不会生成历史记录
+			}
+
+			
+			// console.log(history);
+
+		};
+	</script>
+</head>
+<body>
+	<button id="btn01">点我一下</button>
+</body>
+</html>
