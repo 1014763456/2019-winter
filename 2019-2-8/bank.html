@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action="calculate.php" method="POST">
+        <!-- 
+            type:text单行文本框 password密码 radio单选按钮 checkbox复选 submit提交
+            reset重新输入 file上传文件 image图像提交按钮 hidden隐藏 button一般按钮
+        -->
+        <fieldset>
+            <legend>个人资料</legend>
+            请输入姓名 &nbsp;&nbsp;&nbsp;&nbsp;: <input type="text" name="UserName" ><br>
+            请输入E-Mail : <input type="text" name="UserMail"><br>
+        </fieldset>
+        <fieldset>
+            <legend>计算存款本利和</legend>
+            请输入本金(例如50000) &nbsp;: <input type="text" name="Money" ><br>
+            请输入年利率(例如0.05) &nbsp;: <input type="text" name="Rate" ><br>
+            请输入月数(例如11) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <input type="text" name="Mouth" ><br>
+        </fieldset>
+        <input type="submit" value="开始计算">
+        <input type="reset" value="重新输入">
+    </form>
+</body>
+</html>

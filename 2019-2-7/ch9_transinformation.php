@@ -7,15 +7,16 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="">
+    <!-- <form action="mailto:1014763456@qq.com" method="POST"> -->
+    <form action="ch9_confirm.php" method="POST">
         姓&nbsp;&nbsp;&nbsp;名 :<input type="text" name="UserName" size="40"><br>
-        E-Mail :<input type="text" name="UserMail" size="40" value="username@mailserver"><br>
+        E-Mail :<input type="text" name="UserMail" size="40" placeholder="username@mailserver"><br>
         年&nbsp;&nbsp;&nbsp;龄:
         <input type="radio" name="UserAge" value="Age1">未满20岁
-        <input type="radio" name="UserAge" value="Age1" checked>20-29
-        <input type="radio" name="UserAge" value="Age1">30-39
-        <input type="radio" name="UserAge" value="Age1">40-49
-        <input type="radio" name="UserAge" value="Age1">50以上<br>
+        <input type="radio" name="UserAge" value="Age2" checked>20-29
+        <input type="radio" name="UserAge" value="Age3">30-39
+        <input type="radio" name="UserAge" value="Age4">40-49
+        <input type="radio" name="UserAge" value="Age5">50以上<br>
         您使用过哪些品牌的手机?
         <input type="checkbox" name="UserPhone[]" value="htc" checked>htc
         <input type="checkbox" name="UserPhone[]" value="Apple" >Apple
@@ -24,6 +25,7 @@
         您使用手机时最常碰到哪些问题?<br>
         <textarea name="UserTrouble" cols="45" rows="4" placeholder="上网速度不够快"></textarea><br>
         您使用过哪些电信服务商?(可复选)
+        <!-- 若要复选需要按住ctrl键 -->
         <select name="UserNumber[]" size="4" multiple>
             <option value="电信">电信</option>
             <option value="大哥大">大哥大</option>
