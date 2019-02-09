@@ -8,15 +8,15 @@
     */
 
     header("Content-type:text/html;charset=utf-8");
-    // session_start();//启用SEssion功能
-    // echo "Session ID为".session_id()."<br>";//获取当前浏览器的Session ID然后显示出来
-    // //通过$_SESSION访问Session内所记录的变量
-    // if(!isset($_SESSION['Count'])){
-    //     $_SESSION['Count'] = 1;
-    // }else{
-    //     $_SESSION['Count']++;
-    // }
-    // echo "这是您在本浏览器第{$_SESSION['Count']}次加载本网页";
+    session_start();//启用SEssion功能
+    echo "Session ID为".session_id()."<br>";//获取当前浏览器的Session ID然后显示出来
+    //通过$_SESSION访问Session内所记录的变量
+    if(!isset($_SESSION['Count'])){
+        $_SESSION['Count'] = 1;
+    }else{
+        $_SESSION['Count']++;
+    }
+    echo "这是您在本浏览器第{$_SESSION['Count']}次加载本网页";
 
     
     /*

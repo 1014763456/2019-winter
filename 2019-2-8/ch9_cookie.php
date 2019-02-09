@@ -16,7 +16,7 @@
     // setcookie("UserName","小丸子",time()+60*60*24);
     // ob_end_flush();//取出缓冲区的输出,显示"Hello World!"
 
-    //setcookie("UserName","");//删除名称为UserName的Cookie其中第一个参数必须为""
+    //setcookie("UserName","");//删除名称为UserName的Cookie其中第二个参数必须为""
 
 
     //读取cookie

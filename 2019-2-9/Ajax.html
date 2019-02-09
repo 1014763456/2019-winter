@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        Ajax(Asynchronous JavaScript XML),具有异步,使用JavaScript与XML等技术.
+        Ajax可以让谷歌地图可以平滑的拖拽地图,可以让在线游戏和社群网站拥有实时响应,减少操作延迟,和界面刷新.
+
+        传统动态网页:
+            当浏览者做出点击按钮或者任何与Web服务器互动的操作就会产生一个Http请求,将真个页面内容
+            返回给Web服务器,即使只有一个字段的数据,浏览器仍会将所有字段的数据返回Web服务器,Web
+            服务器在收到数据后执行操作,然后发送Http响应将结果全部送回浏览器(包括没有变动过的数据,
+            图像,JavaScript等).浏览器在收到数据时将整个网页重新显示,出现闪烁或停顿.
+        传统动态网页:
+        
+        Ajax技术的动态网页:
+            当浏览者做出点击按钮或者其他与Web服务器互动的操作时,浏览器端会使用JavaScript通过XMLHttpRequest
+            对象送出异步的Http请求,此时只需要将需要的字段数据返回Web服务器,然后执行指定的操作,并以Http Response
+            的方式将执行结果送回浏览器,浏览器在收到数据后,可以通过JavaScript通过DHTML或DOM模式来更新特定字段
+        Ajax功能已经被实现为JavaScript解释器原生的部分.
+
+        创建XMLHttpRequeat对象(具体实现在utility.js):
+            var XHR = new XMLHttpRequest();//其他浏览器
+            var XHR = new ActiveXObkect("Msxml2.XMLHTTP");//IE6+浏览器
+            var XHR = new ActiveXObject("Microsoft.XMLHTTP");//IE5浏览器
+
+        传送Http Request:
+            1.调用XMLHttpRequeat对象的open函数:open(string method,string URL,bool async)
+            method指定建立方式:POST,GET.  URL为要请求的文件地址.  async执行是否使用异步调用.
+            2.在Web服务器接受到数据,进行处理并返回结果后,XMLHttpReQuest对象的readyState属性会改变
+            ,进而触发onreadystatechange事件,我们可以通过onreadystatechange事件处理程序接收
+            Http Response.
+            3.调用XMLHttpRequeat对象的send函数:send(string content)
+            当以GET方式传送Request,content为null. 当以POST方式传送,content是要传送给Web服务器的参数
+
+            var XHR = new XMLHttpRequest();
+            XHR.open("GET","poetry.txt",true);
+            XHR.onreadystatechange = handleStateChange;
+            XHR.send(null);
+
+        接收Http Response并更新网页内容:
+            function handleStateChange(){
+                //编写代码来获取Web服务器返回的结果
+            }
+            
+        
+        XMLHttpRequest对象的readyState属性会记录目前处于哪个阶段,返回值为0-4,4表示Http请求
+        执行完毕.不过执行完毕不代表成功,还需要判断XMLHttpRequest对象的status属性,只有当status
+        属性返回200才表示成功,否则会返回404.
+        当Web服务器返回的数据为文字时,我们可以通过XMLHttpRequest对象的ResponseText属性获取执行
+        结果;当Web服务器返回数据为XMl文件,我们可以通过reaponseXML属性获取结果.
+        XMLHTTPRequest对象还提供一下方法:
+        abort():停止HTTP Request.
+        getAllResponseHeaders():获取所有响应标头信息.
+        getResponseHeader(string Name):获取参数Name指定的响应标头信息.
+
+     -->
+</body>
+</html>

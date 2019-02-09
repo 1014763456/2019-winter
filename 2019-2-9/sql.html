@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        field字段  record记录  table数据表  database数据库
+
+        SQL(Structured Query Language)结构化查询语言
+
+        SELECE指令(筛选数据)
+        SELECE 字段名 FROM 数据表名 [WHERE 搜索子句] [ORDER BY 排序子句{ASC|DESC} LIMIT ]
+        
+
+
+        在grade数据表中筛选所有记录的name,english字段
+        SELECT name,english FROM grade
+
+        在grade数据表中筛选所有记录的所有字段
+        SELECT * FROM grade
+
+        在grade数据表中筛选所有记录的name,english字段,并分别更名为姓名和英语
+        SELECT name AS 姓名,english AS 英语 FROM grade
+
+        在grade数据表中筛选所有记录的name字段,然后将chinese,math,english这三个字段相加后的分数产生为total字段
+        SELECT name,chinese+math+english AS total FROM grade
+        
+        在grade数据表中筛选chinese>90记录中的name,math字段
+        SELECT name,math FROM grade WHERE chinese>90
+
+        SELECT name,chinese,math FROM grade WHERE chinese>90 OR math>90
+
+        SELECT * FROM grade WHERE chinese<90 AND (math>90 OR english>90)
+
+
+
+        通配符:
+            % : 任何长度的字符串(包括0)
+            _ : 任何一个字符
+            [] : 某个范围内的一个字符
+        
+        筛选name以陈开头的记录的所有字段
+        SELECT * FROM grade WHERE name LIKE '陈%'
+
+        筛选name是"X小美"的记录中的english和math字段
+        SELECT english,math FROM grade WHERE name LIKE '_小美'
+
+        SELECT * FROM grade WHERE name LIKE '[a - f]ean'
+
+        SELECT * FROM grade WHERE chinese IN (80,85,88)
+
+
+
+        ORDER BY(排序)
+        按照chinese递增顺序排序(默认,可以不写)
+        SELECT * FROM grade ORDER BY chinese ASC
+
+        SELECT * FROM grade ORDER BY chinese DESC,math DESC
+
+
+
+
+
+        INSERT指令(添加记录):
+        
+        INSERT INTO 数据表名(字段1,字段2,字段3...) VALUES(数据1,数据2,数据3...)
+
+        INSERT INTO grade(no,name,chinese,math,english) VALUES('A8608011','小丸子',88,95,92)
+
+
+
+
+        UPDATE指令(更新指令):
+        
+        UPDATE 数据表名称 SET 字段1=数据1,字段2=数据2... WHERE 条件
+
+        UPDATE grade SET name = '张小毛',english=100 WHERE no='A8608011'
+
+
+
+
+        DELETE指令(删除记录):
+
+        DELETE FROM 数据表名称 WHERE 条件
+
+        DELETE FROM grade WHERE english<85 AND math<85
+
+     -->
+</body>
+</html>
